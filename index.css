@@ -1,0 +1,28 @@
+body{
+    background: url(images/forest.avif);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%,100%;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+h1,h2,.game-canvas{
+    text-align: center;
+}
+h1{
+    background: -webkit-linear-gradient(#eee, #c05b33);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#score{
+    color:red;
+}
+#status{
+    color:red;
+}
+.status1{
+    color:green;
+}
