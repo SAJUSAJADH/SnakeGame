@@ -1,4 +1,7 @@
 var canvas=document.getElementById('canvas').getContext('2d');
+var theme = new Audio('sounds/Snake Game - Theme Song.mp3');
+var audio = new Audio('sounds/eating.wav');
+var sound = new Audio('sounds/biting.mp3');
 var spx=80;
 var spy=80;
 var nspx=0;
@@ -61,7 +64,7 @@ function game(){
        ) 
        if(spx==snake[i].x && spy==snake[i].y && snakebody > 1){
         clearInterval(play);
-        var sound = new Audio('sounds/biting.mp3');
+        theme.pause();
         sound.play();
         status="GAME OVER";
         document.getElementById('status').innerHTML= status;
@@ -74,7 +77,6 @@ function game(){
 
 
     if(spx == fpx && spy == fpy){
-        var audio = new Audio('sounds/eating.wav');
         audio.play();
         snakebody++;
         score+=10;
@@ -91,6 +93,8 @@ function game(){
 
 
 function inputcontrol(e){
+    theme.play();
+    theme.loop = true;
     switch(e.keyCode){
         case 87:
             nspy-=20;
